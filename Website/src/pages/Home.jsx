@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Stats from './Stats';
 import About from './AboutSection';
 import Sponsors from './Sponsors';
+import SponsorForm from './SponsorForm';
 import Nav from './nav';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -460,9 +461,12 @@ const Home = () => {
         <TeamSection />
       </div>
 
-
       <div id="Sponsors">
         <Sponsors />
+      </div>
+
+      <div id="sponsorform">
+        <SponsorForm />
       </div>
 
       <div id="Footer">
