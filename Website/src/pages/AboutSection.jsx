@@ -18,9 +18,9 @@ const About = () => {
       const slides = document.querySelectorAll('.slide');
 
       const slideThresholds = [
-        { enter: 0.1, exit: 0.02 },
-        { enter: 0.3, exit: 0.22 },
-        { enter: 0.5, exit: 0.42 },
+        { enter: 0.1, exit: 0.35 },    // Slide 1: 10% - 35% (appears on first scroll)
+        { enter: 0.45, exit: 0.7 },    // Slide 2: 45% - 70% (appears on second scroll)  
+        { enter: 0.8, exit: 0.95 },    // Slide 3: 80% - 95% (appears on third scroll)
       ];
 
       for (let i = 0; i < totalSlides; i++) {
@@ -45,7 +45,7 @@ const About = () => {
         }
       }
 
-      if (scrollProgress >= 0.6) {
+      if (scrollProgress >= 0.85) {
         for (let i = 0; i < totalSlides; i++) {
           slides[i].classList.add('active');
           slides[i].style.opacity = '1';
@@ -96,7 +96,7 @@ const About = () => {
         }
 
         .scroll-container {
-          height: 500vh;
+          height: 300vh;
           position: relative;
           background: #000;
         }
