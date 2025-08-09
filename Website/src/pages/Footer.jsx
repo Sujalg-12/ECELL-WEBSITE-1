@@ -1,11 +1,35 @@
 import React from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ecellLogo from '../assets/images/ecell-logo.png'; 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import XIcon from '@mui/icons-material/X';
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleFooterNav = (target) => {
+    // Simple route navigations
+    if (target === '/' || target === '/events' || target === '/teams') {
+      navigate(target);
+      return;
+    }
+
+    // In-page sections on Home
+    if (target === '#about' || target === '#contact') {
+      if (location.pathname === '/') {
+        const el = document.querySelector(target);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          const el = document.querySelector(target);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 120);
+      }
+    }
+  };
   return (
     <footer className="footer">
       <style jsx>{`
@@ -670,9 +694,6 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/ecell-iiitdm/posts/?feedView=all" className="social-link linkedin" aria-label="LinkedIn">
                 <LinkedInIcon />
               </a>
-              <a href="#" className="social-link x" aria-label="X">
-                <XIcon />
-              </a>
               <a href="https://github.com/IIITDMK-ecell" className="social-link github" aria-label="GitHub">
                 <GitHubIcon  />
               </a>
@@ -684,30 +705,29 @@ const Footer = () => {
         <div className="footer-middle">
           <div className="quick-links-title">QUICK LINKS</div>
           <ul className="quick-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a onClick={() => handleFooterNav('/')} role="button">Home</a></li>
+            <li><a onClick={() => handleFooterNav('#about')} role="button">About Us</a></li>
+            <li><a onClick={() => handleFooterNav('/events')} role="button">Events</a></li>
+            <li><a onClick={() => handleFooterNav('/teams')} role="button">Team</a></li>
+            <li><a onClick={() => handleFooterNav('#contact')} role="button">Contact</a></li>
           </ul>
         </div>
 
         {/* Right Section */}
         <div className="footer-right">
           <div className="contact-card address">
-            Address: IIITDM Kancheepuram, Chennai
+            Address: IIITDM Kancheepuram, Melakottaiyur, off Kelambakkam - Vandalur Road, Kandigai, Nellikuppam, Tamil Nadu 600127
           </div>
           <div className="contact-card">
             Email: ecell@iiitdm.ac.in
-          </div>
-          <div className="contact-card">
-            Phone: +91 12345 67890
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>Made with Love by Tech team E-cell IIITDM-K</p>
+        <p>
+          Made with <span style={{color: '#e25555', fontSize: '1.2em'}}>❤️</span> by <a href="/teams" style={{color: '#e2e8f0', textDecoration: 'underline'}}>Tech Team</a> E-Cell IIITDM-K
+        </p>
       </div>
     </footer>
   );

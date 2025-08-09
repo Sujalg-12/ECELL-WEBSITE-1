@@ -465,7 +465,7 @@ const Home = () => {
         <Sponsors />
       </div>
 
-      <div id="sponsorform">
+      <div id="contact">
         <SponsorForm />
       </div>
 

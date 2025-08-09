@@ -88,7 +88,7 @@ const SponsorForm = () => {
             <Users className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-orange-400 bg-clip-text text-transparent">
-            Sponsor Us
+            Contact Us
           </h1>
           <p className="text-gray-300 text-lg">Join our entrepreneurship journey and make an impact</p>
         </div>
@@ -203,7 +203,7 @@ const SponsorForm = () => {
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    <span>Become a Sponsor</span>
+                    <span>Submit</span>
                   </>
                 )}
               </div>
