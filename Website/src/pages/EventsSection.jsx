@@ -230,12 +230,7 @@ function Events() {
     navigator.clipboard.writeText(text);
   };
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'module';
-    script.src = 'https://unpkg.com/@splinetool/viewer@1.10.7/build/spline-viewer.js';
-    document.body.appendChild(script);
-  }, []);
+  // Removed unused Spline viewer script injection for performance
 
   return (
     <div className="min-h-screen bg-black flex flex-col items-center justify-center px-4 py-8">

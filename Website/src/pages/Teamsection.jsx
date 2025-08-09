@@ -37,19 +37,7 @@ const teamMembers = [
     role: 'Events Lead',
     image: '../assets/Leads/Grishmank.jpeg',
     linkedin: 'https://linkedin.com/in/sarah-johnson',
-  },
-  {
-    name: 'Michael Chen',
-    role: 'Technology Lead',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
-    linkedin: 'https://linkedin.com/in/michael-chen',
-  },
-  {
-    name: 'Emily Davis',
-    role: 'Operations Manager',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face',
-    linkedin: 'https://linkedin.com/in/emily-davis',
-  },
+  }
 ];
 
 const TeamSection = () => {
