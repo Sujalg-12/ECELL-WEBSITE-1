@@ -1,7 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import ecellLogo from '../assets/images/ecell-logo.png'; 
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+    // Scroll to top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="footer">
       <style jsx>{`
@@ -56,10 +65,11 @@ const Footer = () => {
           align-items: center;
           gap: clamp(10px, 2vw, 15px);
           flex-wrap: wrap;
+          margin-left: -10%;
         }
 
         .logo-image {
-          width: clamp(120px, 15vw, 200px);
+          width: clamp(144px, 18vw, 240px);
           height: auto;
           max-width: 100%;
           object-fit: contain;
@@ -343,7 +353,7 @@ const Footer = () => {
           }
           
           .logo-image {
-            width: 100px;
+            width: 120px;
           }
           
           .social-links {
@@ -400,7 +410,7 @@ const Footer = () => {
           }
           
           .logo-image {
-            width: 130px;
+            width: 156px;
           }
           
           .social-links {
@@ -447,7 +457,7 @@ const Footer = () => {
           }
           
           .logo-image {
-            width: 150px;
+            width: 180px;
           }
           
           .contact-card {
@@ -473,7 +483,7 @@ const Footer = () => {
           }
           
           .logo-image {
-            width: 160px;
+            width: 192px;
           }
         }
 
@@ -490,7 +500,7 @@ const Footer = () => {
           }
           
           .logo-image {
-            width: 170px;
+            width: 204px;
           }
         }
 
@@ -507,7 +517,7 @@ const Footer = () => {
           }
           
           .logo-image {
-            width: 180px;
+            width: 216px;
           }
         }
 
@@ -526,7 +536,7 @@ const Footer = () => {
           }
           
           .logo-image {
-            width: 200px;
+            width: 240px;
           }
         }
 
@@ -552,7 +562,7 @@ const Footer = () => {
           }
           
           .logo-image {
-            width: 80px;
+            width: 96px;
           }
           
           .social-links {
@@ -651,6 +661,8 @@ const Footer = () => {
               src={ecellLogo} 
               alt="E-Cell IIITDM-K Logo" 
               className="logo-image"
+              onClick={handleLogoClick}
+              style={{ cursor: 'pointer' }}
             />
             <div className="brand-text">
               {/* Add brand text here if needed */}
