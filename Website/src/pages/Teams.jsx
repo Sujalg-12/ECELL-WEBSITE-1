@@ -9,6 +9,13 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const teams = [
   {
+    name: 'Faculty Advisor',
+    quote: 'Guiding the way.',
+    members: [
+      { name: 'Dr. Sudhir Varadarajan', image: '/assets/mentor/Sudhir.jpeg', linkedin: '#', github: '#' },
+    ]
+  },
+  {
     name: 'Head Core',
     quote: 'Leading from the front.',
     members: [
@@ -133,10 +140,11 @@ const Intro = () => (
 );
 
 const TeamMemberCard = ({ name, image, isLead, parentTeam, linkedin, github }) => {
-  const isSpecial = parentTeam === 'Head Core' || parentTeam === 'Vice Core' || parentTeam === 'Leads';
+  const isSpecial = parentTeam === 'Faculty Advisor' || parentTeam === 'Head Core' || parentTeam === 'Vice Core' || parentTeam === 'Leads';
   const roleText = isSpecial
     ? (parentTeam === 'Head Core' ? 'Club Head Core' : 
-       parentTeam === 'Vice Core' ? 'Club Vice Core' : 'Club Leads')
+       (parentTeam === 'Vice Core' ? 'Club Vice Core' : 
+       (parentTeam === 'Faculty Advisor' ? 'Faculty Advisor' : 'Club Leads')))
     : isLead
     ? 'Team Lead'
     : 'Team Member';

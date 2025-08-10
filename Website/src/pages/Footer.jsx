@@ -1,14 +1,47 @@
 import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
+
+import { useNavigate, useLocation } from 'react-router-dom';
+
 import ecellLogo from '../assets/images/ecell-logo.png'; 
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
   const navigate = useNavigate();
+
 
   const handleLogoClick = () => {
     navigate('/');
     // Scroll to top of the page
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+
+  const location = useLocation();
+
+  const handleFooterNav = (target) => {
+    // Simple route navigations
+    if (target === '/' || target === '/events' || target === '/teams') {
+      navigate(target);
+      return;
+    }
+
+    // In-page sections on Home
+    if (target === '#about' || target === '#contact') {
+      if (location.pathname === '/') {
+        const el = document.querySelector(target);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          const el = document.querySelector(target);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 120);
+      }
+    }
   };
 
   return (
@@ -153,7 +186,7 @@ const Footer = () => {
           background: #0077b5;
         }
 
-        .social-link.twitter:hover {
+        .social-link.x:hover {
           background: #1da1f2;
         }
 
@@ -672,41 +705,14 @@ const Footer = () => {
           <div className="social-section">
             <div className="follow-text">FOLLOW US ON</div>
             <div className="social-links">
-              <a href="#" className="social-link instagram" aria-label="Instagram">
-                <svg viewBox="0 0 32 32" fill="none">
-                  <defs>
-                    <linearGradient id="instagram-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#f09433" />
-                      <stop offset="25%" stopColor="#e6683c" />
-                      <stop offset="50%" stopColor="#dc2743" />
-                      <stop offset="75%" stopColor="#cc2366" />
-                      <stop offset="100%" stopColor="#bc1888" />
-                    </linearGradient>
-                  </defs>
-                  <rect width="32" height="32" rx="8" fill="url(#instagram-gradient)" />
-                  <circle cx="16" cy="16" r="5" fill="none" stroke="white" strokeWidth="2" />
-                  <circle cx="23" cy="9" r="1.5" fill="white" />
-                  <rect x="6" y="6" width="20" height="20" rx="6" fill="none" stroke="white" strokeWidth="2" />
-                </svg>
+              <a href="https://www.instagram.com/ecell_iiitdm/" className="social-link instagram" aria-label="Instagram">
+                <InstagramIcon />
               </a>
-              <a href="#" className="social-link linkedin" aria-label="LinkedIn">
-                <svg viewBox="0 0 32 32" fill="none">
-                  <rect width="32" height="32" rx="8" fill="#0077b5" />
-                  <path d="M8.5 12h3v10h-3V12zm1.5-4.5c1 0 1.8.8 1.8 1.8s-.8 1.8-1.8 1.8-1.8-.8-1.8-1.8.8-1.8 1.8-1.8z" fill="white" />
-                  <path d="M14 12h2.8v1.4h.1c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.7 2 3.7 4.6V22h-3v-4.8c0-1.1 0-2.5-1.5-2.5s-1.7 1.2-1.7 2.4V22h-3V12z" fill="white" />
-                </svg>
+              <a href="https://www.linkedin.com/company/ecell-iiitdm/posts/?feedView=all" className="social-link linkedin" aria-label="LinkedIn">
+                <LinkedInIcon />
               </a>
-              <a href="#" className="social-link twitter" aria-label="Twitter">
-                <svg viewBox="0 0 32 32" fill="none">
-                  <rect width="32" height="32" rx="8" fill="#1da1f2" />
-                  <path d="M24 9.5c-.8.3-1.6.6-2.5.7.9-.5 1.6-1.4 1.9-2.4-.8.5-1.7.8-2.7 1-.8-.8-1.9-1.3-3.1-1.3-2.3 0-4.2 1.9-4.2 4.2 0 .3 0 .6.1.9-3.5-.2-6.6-1.9-8.7-4.4-.4.6-.6 1.4-.6 2.2 0 1.5.7 2.8 1.8 3.5-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.7 3.3 4.1-.3.1-.7.1-1.1.1-.3 0-.5 0-.8-.1.5 1.6 2 2.8 3.8 2.8-1.4 1.1-3.2 1.8-5.1 1.8-.3 0-.7 0-1-.1 1.8 1.2 4 1.9 6.3 1.9 7.5 0 11.6-6.2 11.6-11.6v-.5c.8-.6 1.5-1.3 2.1-2.1z" fill="white" />
-                </svg>
-              </a>
-              <a href="#" className="social-link github" aria-label="GitHub">
-                <svg viewBox="0 0 32 32" fill="none">
-                  <rect width="32" height="32" rx="8" fill="#333" />
-                  <path fillRule="evenodd" clipRule="evenodd" d="M16 8C11.6 8 8 11.6 8 16c0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1.1-2.7-1.1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.2 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.3.6.8.6 1.5v2.2c0 .2.1.5.5.4C21.7 22.5 24 19.5 24 16c0-4.4-3.6-8-8-8z" fill="white" />
-                </svg>
+              <a href="https://github.com/IIITDMK-ecell" className="social-link github" aria-label="GitHub">
+                <GitHubIcon  />
               </a>
             </div>
           </div>
@@ -716,30 +722,29 @@ const Footer = () => {
         <div className="footer-middle">
           <div className="quick-links-title">QUICK LINKS</div>
           <ul className="quick-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Events</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a onClick={() => handleFooterNav('/')} role="button">Home</a></li>
+            <li><a onClick={() => handleFooterNav('#about')} role="button">About Us</a></li>
+            <li><a onClick={() => handleFooterNav('/events')} role="button">Events</a></li>
+            <li><a onClick={() => handleFooterNav('/teams')} role="button">Team</a></li>
+            <li><a onClick={() => handleFooterNav('#contact')} role="button">Contact</a></li>
           </ul>
         </div>
 
         {/* Right Section */}
         <div className="footer-right">
           <div className="contact-card address">
-            Address: IIITDM Kancheepuram, Chennai
+            Address: IIITDM Kancheepuram, Melakottaiyur, off Kelambakkam - Vandalur Road, Kandigai, Nellikuppam, Tamil Nadu 600127
           </div>
           <div className="contact-card">
             Email: ecell@iiitdm.ac.in
-          </div>
-          <div className="contact-card">
-            Phone: +91 12345 67890
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>Made with Love by Tech team E-cell IIITDM-K</p>
+        <p>
+          Made with <span style={{color: '#e25555', fontSize: '1.2em'}}>❤️</span> by <a href="/teams" style={{color: '#e2e8f0', textDecoration: 'underline'}}>Tech Team</a> E-Cell IIITDM-K
+        </p>
       </div>
     </footer>
   );
