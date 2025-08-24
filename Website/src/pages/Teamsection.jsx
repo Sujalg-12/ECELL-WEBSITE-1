@@ -5,7 +5,7 @@ const teamMembers = [
   {
     name: 'Asmit Sahoo',
     role: 'Head Core',
-    image: '../assets/Leads/asmit.jpg',
+    image: '../assets/Leads/Asmit.jpeg',
     linkedin: 'https://in.linkedin.com/in/asmitkum',
   },
   {
@@ -18,25 +18,25 @@ const teamMembers = [
     name: 'Rupkatha Suter',
     role: 'Vice Core',
     image: '../assets/Leads/Rupkatha.jpeg',
-    linkedin: 'https://linkedin.com/in/shaurya',
+    linkedin: 'https://www.linkedin.com/in/rupkatha-suter/',
   },
   {
     name: 'Ashrith Yathin',
     role: 'Publicity Lead',
     image: '../assets/Leads/Ashrith.jpeg',
-    linkedin: 'https://linkedin.com/in/pranil-punekar',
+    linkedin: 'https://www.linkedin.com/in/ashrithyathin',
   },
   {
     name: 'Sujal Gupta',
     role: 'Tech Lead',
     image: '../assets/Leads/Sujal.jpeg',
-    linkedin: 'https://linkedin.com/in/dev-falgun',
+    linkedin: 'https://www.linkedin.com/in/sujal-gupta-597b02375/',
   },
   {
     name: 'Grishmank Parate',
     role: 'Events Lead',
     image: '../assets/Leads/Grishmank.jpeg',
-    linkedin: 'https://linkedin.com/in/sarah-johnson',
+    linkedin: 'https://www.linkedin.com/in/grishmank-parate-91466728a/',
   }
 ];
 

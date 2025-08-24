@@ -25,12 +25,12 @@ useEffect(() => {
 
   const eventsData = [
     {
-      title: "Pitch On Pitch",
-      description: "Flagship event, Showcase your ideas to an investor panel",
+      title: "INNOVYUVA",
+      description: "An exclusive pitching competition designed for young innovators and aspiring entrepreneurs. Present your groundbreaking startup ideas to a panel of industry experts, investors, and mentors.",
       status: "upcoming",
       type: "competition",
       registration: "open",
-      image: "../assets/Eventimages/Pitchonpitch.png",
+      image: "../assets/Eventimages/Innovyuva.png",
       videos: ["./videos/pitch_on_pitch.mp4", "./videos/pitch_on_pitch_alternate.mp4"]
     },
     {
@@ -291,7 +291,11 @@ return (
                             >
                                 ★
                             </button>
-                            <div className="event-image" style={{ backgroundImage: `url(${event.image})` }}>
+                            <div className="event-image" style={{ 
+                                backgroundImage: `url(${event.image})`,
+                                backgroundSize: event.title === 'INNOVYUVA' ? '200%' : 'cover',
+                                backgroundPosition: 'center'
+                            }}>
                                 <video className="event-video" muted loop>
                                     {event.videos.map((video, videoIndex) => (
                                         <source key={videoIndex} src={video} type="video/mp4" />

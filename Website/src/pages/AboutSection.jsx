@@ -19,8 +19,8 @@ const About = () => {
 
       const slideThresholds = [
         { enter: 0.1, exit: 0.35 },    // Slide 1: 10% - 35% (appears on first scroll)
-        { enter: 0.45, exit: 0.7 },    // Slide 2: 45% - 70% (appears on second scroll)  
-        { enter: 0.8, exit: 0.95 },    // Slide 3: 80% - 95% (appears on third scroll)
+        { enter: 0.65, exit: 0.7 },    // Slide 2: 45% - 70% (appears on second scroll)  
+        { enter: 0.95, exit: 1.1 },    // Slide 3: 80% - 95% (appears on third scroll)
       ];
 
       for (let i = 0; i < totalSlides; i++) {
@@ -85,7 +85,8 @@ const About = () => {
 
         @keyframes floatRocket {
           0% {
-            transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rota
+            te(0deg);
           }
           50% {
             transform: translateY(-5px) rotate(-2deg);
@@ -105,6 +106,7 @@ const About = () => {
           position: sticky;
           top: 0;
           height: 100vh;
+            
           display: flex;
           align-items: center;
           justify-content: center;
@@ -122,8 +124,15 @@ const About = () => {
           padding: clamp(20px, 5vw, 60px) clamp(15px, 4vw, 40px);
           text-align: center;
           border: 1px solid #333;
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 20px 60px rgba(0, 0
+            , 0, 0.5);
           transform: translateY(100vh);
+              {/* <svg viewBox="0 0 24 24" stroke="#fff" strokeWidth="2" fill="none">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="m16 10-4 4-4-4"></path>
+              </svg> */}
+            
           transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
           opacity: 0;
         }
@@ -134,8 +143,8 @@ const About = () => {
 
         .slide.slide-0 { 
           z-index: 1; 
-          background: linear-gradient(135deg, #f5f5dc 0%, #e6e6d0 100%);
-          color: #333;
+          background: #3A3D40;
+          color: #fff;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -145,8 +154,8 @@ const About = () => {
 
         .slide.slide-1 { 
           z-index: 2; 
-          background: linear-gradient(135deg, #ffb39f 0%, #ff9b7f 100%);
-          color: #000;
+          background: #334a3d;
+          color: #fff;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -171,39 +180,31 @@ const About = () => {
           padding-right: clamp(15px, 3vw, 40px);
         }
 
-        .slide-images {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          gap: clamp(10px, 1.5vw, 15px);
-          max-width: clamp(250px, 35vw, 400px);
-        }
-
-        .image-row {
-          display: flex;
-          gap: clamp(10px, 1.5vw, 15px);
-        }
-
-        .image-placeholder {
-          background: linear-gradient(135deg, #ddd 0%, #bbb 100%);
-          border-radius: clamp(8px, 1vw, 10px);
+        .slide-image {
+          flex: 0 0 35%;
+          background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+          border-radius: clamp(12px, 1.5vw, 15px);
+          height: clamp(200px, 25vw, 300px);
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #666;
-          font-size: clamp(10px, 1.2vw, 12px);
           position: relative;
           overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          background-image: url('/assets/Gallery/image3.jpg');
+          background-size: cover;
+          background-position: center;
         }
 
-        .image-main {
-          height: clamp(120px, 15vw, 180px);
-          flex: 1;
-        }
-
-        .image-small {
-          height: clamp(80px, 10vw, 120px);
-          flex: 1;
+        .slide-image::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.2);
+          border-radius: clamp(12px, 1.5vw, 15px);
         }
 
         .vision-content {
@@ -226,7 +227,7 @@ const About = () => {
           position: relative;
           overflow: hidden;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-          background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+          background-image: url('/assets/Gallery/image1.jpg');
           background-size: cover;
           background-position: center;
         }
@@ -251,46 +252,17 @@ const About = () => {
           align-items: flex-start;
         }
 
-        .mission-images {
-          flex: 0 0 35%;
-          display: flex;
-          flex-direction: column;
-          gap: clamp(15px, 2vw, 20px);
-          max-width: clamp(250px, 30vw, 350px);
-        }
-
         .mission-image {
+          flex: 0 0 35%;
           background: linear-gradient(135deg, #333 0%, #555 100%);
           border-radius: clamp(12px, 1.5vw, 15px);
-          height: clamp(100px, 12vw, 140px);
+          height: clamp(200px, 25vw, 300px);
           background-size: cover;
           background-position: center;
           position: relative;
           overflow: hidden;
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-          transform: rotate(-2deg);
-          transition: transform 0.3s ease;
-        }
-
-        .mission-image:hover {
-          transform: rotate(0deg) scale(1.02);
-        }
-
-        .mission-image:nth-child(2) {
-          transform: rotate(3deg);
-          margin-left: clamp(10px, 2vw, 20px);
-        }
-
-        .mission-image:nth-child(2):hover {
-          transform: rotate(0deg) scale(1.02);
-        }
-
-        .mission-image-1 {
-          background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
-        }
-
-        .mission-image-2 {
-          background-image: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');
+          background-image: url('/assets/Gallery/image2.jpg');
         }
 
         .mission-image::before {
@@ -457,14 +429,14 @@ const About = () => {
           font-weight: 700;
           margin-bottom: clamp(15px, 2.5vw, 25px);
           letter-spacing: clamp(0.5px, 0.1vw, 1px);
-          color: #333;
+          color: #fff;
           line-height: 1.2;
         }
 
         .slide-description {
           font-size: clamp(0.9rem, 1.8vw, 1.08rem);
           line-height: 1.7;
-          color: #555;
+          color: #ccc;
           max-width: clamp(300px, 55vw, 520px);
         }
 
@@ -472,7 +444,7 @@ const About = () => {
           font-size: clamp(2rem, 5vw, 3.2rem);
           font-weight: 800;
           margin: 0;
-          color: #000;
+          color: #fff;
           text-transform: uppercase;
           letter-spacing: clamp(1px, 0.2vw, 2px);
           position: relative;
@@ -493,7 +465,7 @@ const About = () => {
         .vision-description {
           font-size: clamp(0.95rem, 1.8vw, 1.1rem);
           line-height: 1.8;
-          color: #000;
+          color: #ccc;
           max-width: clamp(300px, 60vw, 580px);
           text-align: left;
         }
@@ -592,28 +564,19 @@ const About = () => {
             align-items: center;
           }
 
-          .slide-images,
+          .slide-image,
           .vision-image,
-          .mission-images {
+          .mission-image {
             max-width: 100%;
             flex: none;
             width: 100%;
           }
           
-          .vision-image {
+          .vision-image,
+          .slide-image,
+          .mission-image {
             height: 200px;
             margin-top: 20px;
-          }
-
-          .mission-images {
-            flex-direction: row;
-            justify-content: center;
-            margin-top: 20px;
-          }
-
-          .mission-image {
-            width: 150px;
-            height: 120px;
           }
 
           .vision-title,
@@ -637,7 +600,7 @@ const About = () => {
           }
         }
 
-        /* Mobile - 481px to 768px */
+          /* Mobile - 481px to 768px */
         @media (max-width: 768px) and (min-width: 481px) {
           .slide {
             width: 90%;
@@ -659,13 +622,11 @@ const About = () => {
             min-height: 60vh;
           }
 
-          .slide-images,
+          .slide-image,
           .vision-image,
-          .mission-images {
+          .mission-image {
             display: none;
-          }
-
-          .vision-light-bulb {
+          }          .vision-light-bulb {
             display: none;
           }
 
@@ -791,9 +752,9 @@ const About = () => {
             height: 100%;
           }
 
-          .slide-images,
+          .slide-image,
           .vision-image,
-          .mission-images {
+          .mission-image {
             display: none;
           }
 
@@ -1027,20 +988,7 @@ const About = () => {
                 We are the Entrepreneurship Cell of IIITDM-Kancheepuram, a student-led initiative that promotes innovation and entrepreneurial thinking on campus. Our team comprises aspiring entrepreneurs, leaders, and changemakers dedicated to creating a thriving startup culture.Through events, mentorship, competitions, and networking opportunities, we serve as a launchpad for ideas that have the potential to create real-world impact.
               </p>
             </div>
-            <div className="slide-images">
-              <div className="image-row">
-                <div className="image-placeholder image-main">
-                  <span>Team Collaboration</span>
-                </div>
-              </div>
-              <div className="image-row">
-                <div className="image-placeholder image-small">
-                  <span>Innovation</span>
-                </div>
-                <div className="image-placeholder image-small">
-                  <span>Leadership</span>
-                </div>
-              </div>
+            <div className="slide-image">
             </div>
             <div className="rocket-icon">🚀</div>
           </div>
@@ -1049,7 +997,7 @@ const About = () => {
             <div className="vision-content">
               <div className="vision-title">
                 <div className="vision-title-icon">
-                  <svg viewBox="0 0 24 24" stroke="#000" strokeWidth="2" fill="none">
+                  <svg viewBox="0 0 24 24" stroke="#fff" strokeWidth="2" fill="none">
                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                     <circle cx="12" cy="12" r="3"></circle>
                   </svg>
@@ -1061,17 +1009,6 @@ const About = () => {
               </p>
             </div>
             <div className="vision-image">
-            </div>
-            <div className="vision-light-bulb">
-              <div className="bulb-rays">
-                <div className="bulb-ray"></div>
-                <div className="bulb-ray"></div>
-                <div className="bulb-ray"></div>
-                <div className="bulb-ray"></div>
-                <div className="bulb-ray"></div>
-                <div className="bulb-ray"></div>
-              </div>
-              <div className="bulb-icon"></div>
             </div>
           </div>
 
@@ -1090,9 +1027,7 @@ const About = () => {
                 To build a strong entrepreneurial ecosystem at IIITDM-K that equips students with the skills, mindset, and resources to create high-impact startups. We aim to develop future leaders and innovators who can solve real-world problems, drive economic growth, and contribute to national and global progress through entrepreneurship.
               </p>
             </div>
-            <div className="mission-images">
-              <div className="mission-image mission-image-1"></div>
-              <div className="mission-image mission-image-2"></div>
+            <div className="mission-image">
             </div>
             <div className="rocket-corner">
               {/* <svg viewBox="0 0 24 24" stroke="#fff" strokeWidth="2" fill="none">

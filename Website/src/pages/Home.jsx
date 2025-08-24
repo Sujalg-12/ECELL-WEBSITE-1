@@ -433,8 +433,9 @@ const Home = () => {
             </h1>
             <div className="subtitle">
               <span>INNOVATE</span>
+              <span>IDEATE</span>
+              <span>IMPLEMENT</span>
               <span>INSPIRE</span>
-              <span>IGNITE</span>
             </div>
           </div>
         </main>

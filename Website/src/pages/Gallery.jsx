@@ -120,7 +120,7 @@ const Gallery = () => {
   const extendedImages = [...images, ...images, ...images];
 
   return (
-    <section className="relative py-20 bg-black z-[2] overflow-hidden">
+    <section className="relative py-12 sm:py-16 md:py-20 bg-black z-[2] overflow-hidden">
       <div className="absolute inset-0 bg-black z-0"></div>
       <div className="absolute inset-0 bg-black z-0"></div>
 
@@ -137,7 +137,7 @@ const Gallery = () => {
         
       </div>
 
-      <div className="relative w-full h-[500px] bg-gradient-to-r from-black/20 via-transparent to-black/20 backdrop-blur-sm border-y-2 border-orange-500/30 shadow-[0_0_50px_rgba(244,103,9,0.3),inset_0_0_50px_rgba(244,103,9,0.1)]">
+      <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] bg-gradient-to-r from-black/20 via-transparent to-black/20 backdrop-blur-sm border-y-2 border-orange-500/30 shadow-[0_0_50px_rgba(244,103,9,0.3),inset_0_0_50px_rgba(244,103,9,0.1)]">
   <div
     className="absolute inset-0 rounded-none border-2 border-transparent bg-gradient-to-r from-orange-500/40 via-amber-400/40 to-orange-500/40 bg-clip-border animate-pulse"
     style={{
@@ -174,7 +174,7 @@ const Gallery = () => {
                     opacity: opacity
                   }}
                 >
-                  <div className="relative group h-96">
+                  <div className="relative group h-56 sm:h-80 md:h-96">
                     <img
                       src={image.url}
                       alt={image.alt}

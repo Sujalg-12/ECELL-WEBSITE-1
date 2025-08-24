@@ -15,15 +15,15 @@ function Events() {
   const events = [
     {
       id: 1,
-      title: "Pitch On Pitch",
-      date: "July 15, 2025",
-      time: "6:00 PM - 11:00 PM",
-      location: "H05",
-      image: "/assets/Eventimages/Pitchonpitch.png",
-      description: "Showcase your startup ideas to industry experts and investors in this flagship pitching competition.",
+      title: "INNOVYUVA",
+      date: "August 25, 2025",
+      time: "4:00 PM - 7:00 PM",
+      location: "Senate Hall",
+      image: "/assets/Eventimages/Innovyuva.png",
+      description: "An exclusive pitching competition for young innovators and aspiring entrepreneurs. Present your startup ideas to industry experts, investors, and mentors while competing for exciting prizes and funding opportunities.",
       isOnline: false,
       attendees: 100,
-      category: "Business & Finance",
+      category: "Pitching Competition",
       organizer: "ECELL-IIITDMK"
     },
     {
